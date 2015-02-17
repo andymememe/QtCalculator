@@ -21,6 +21,79 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    switch (e->key()){
+    case Qt::Key_1:
+    case (Qt::KeypadModifier + Qt::Key_1):
+        this->on_oneBtn_clicked();
+        break;
+    case Qt::Key_2 :
+    case (Qt::KeypadModifier + Qt::Key_2) :
+        this->on_twoBtn_clicked();
+        break;
+    case Qt::Key_3:
+    case (Qt::KeypadModifier + Qt::Key_3):
+        this->on_threeBtn_clicked();
+        break;
+    case Qt::Key_4:
+    case (Qt::KeypadModifier + Qt::Key_4):
+        this->on_fourBtn_clicked();
+        break;
+    case Qt::Key_5:
+    case (Qt::KeypadModifier + Qt::Key_5):
+        this->on_fiveBtn_clicked();
+        break;
+    case Qt::Key_6:
+    case (Qt::KeypadModifier + Qt::Key_6):
+        this->on_sixBtn_clicked();
+        break;
+    case Qt::Key_7:
+    case (Qt::KeypadModifier + Qt::Key_7):
+        this->on_sevenBtn_clicked();
+        break;
+    case Qt::Key_8:
+    case (Qt::KeypadModifier + Qt::Key_8):
+        this->on_eightBtn_clicked();
+        break;
+    case Qt::Key_9:
+    case (Qt::KeypadModifier + Qt::Key_9):
+        this->on_nineBtn_clicked();
+        break;
+    case Qt::Key_0:
+    case (Qt::KeypadModifier + Qt::Key_0):
+        this->on_zeroBtn_clicked();
+        break;
+    case Qt::Key_Backspace:
+        this->on_acBtn_clicked();
+        break;
+    case Qt::Key_Plus:
+    case (Qt::KeypadModifier + Qt::Key_Plus):
+        this->on_plusBtn_clicked();
+        break;
+    case Qt::Key_Minus:
+    case (Qt::KeypadModifier + Qt::Key_Minus):
+        this->on_minBtn_clicked();
+        break;
+    case Qt::Key_Asterisk:
+    case (Qt::KeypadModifier + Qt::Key_Asterisk):
+        this->on_mulBtn_clicked();
+        break;
+    case Qt::Key_Slash:
+    case (Qt::KeypadModifier + Qt::Key_Slash):
+        this->on_divBtn_clicked();
+        break;
+    case Qt::Key_Period:
+    case (Qt::KeypadModifier + Qt::Key_Period):
+        this->on_pointBtn_clicked();
+        break;
+    case Qt::Key_Enter:
+    case (Qt::KeypadModifier + Qt::Key_Enter):
+        this->on_equBtn_clicked();
+        break;
+    }
+}
+
 /**********************/
 /* Add number in variable */
 /**********************/
@@ -209,6 +282,7 @@ void MainWindow::on_plusBtn_clicked()
         this->calor=0;
         this->display="0";
         this->endCalee = true;
+        this->point = false;
         this->func = 1;
     }
 }
@@ -220,6 +294,7 @@ void MainWindow::on_minBtn_clicked()
         this->calor=0;
         this->display="0";
         this->endCalee = true;
+        this->point = false;
         this->func = 2;
     }
 }
@@ -231,6 +306,7 @@ void MainWindow::on_mulBtn_clicked()
         this->calor=0;
         this->display="0";
         this->endCalee = true;
+        this->point = false;
         this->func = 3;
     }
 }
@@ -242,6 +318,7 @@ void MainWindow::on_divBtn_clicked()
         this->calor=0;
         this->display="0";
         this->endCalee = true;
+        this->point = false;
         this->func = 4;
     }
 }
